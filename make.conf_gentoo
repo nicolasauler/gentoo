@@ -1,0 +1,37 @@
+# These settings were set by the catalyst build script that automatically
+# built this stage.
+# Please consult /usr/share/portage/config/make.conf.example for a more
+# detailed example.
+COMMON_FLAGS="-march=native -O2 -pipe"
+CFLAGS="${COMMON_FLAGS}"
+CXXFLAGS="${COMMON_FLAGS}"
+FCFLAGS="${COMMON_FLAGS}"
+FFLAGS="${COMMON_FLAGS}"
+MAKEOPTS="-j4"
+
+USE="-kde -systemd -gnome -aqua -cdinstall -cdr -css -dvd -dvdr -ios -ipod -emacs -xemacs -smartcard -ibm -cups \
+     -emboss -altivec -bluetooth -clamav -coreaudio -joystick -neon -a52 -cjk -ieee1394 -audit -gps \
+     -plasma -nvidia -3dfx \
+     alsa X xinerama"
+
+# NOTE: This stage was built with the bindist Use flag enabled
+PORTDIR="/var/db/repos/gentoo"
+DISTDIR="/var/cache/distfiles"
+PKGDIR="/var/cache/binpkgs"
+
+# WARNING: Changing your CHOST is not something that should be done lightly.
+# Please consult https://wiki.gentoo.org/wiki/Changing_the_CHOST_variable before changing.
+CHOST="x86_64-gentoo-linux-musl"
+
+# This sets the language of build output to English
+# Please keep this setting intact when reporting bugs.
+LC_MESSAGES=C
+
+# EMERGE_DEFAULT_OPTS is set automatically by livecd-tools autoconfig during first live boot.
+# This should be equal to number of processors, see "man emerge" for details.
+EMERGE_DEFAULT_OPTS="${EMERGE_DEFAULT_OPTS} --jobs=4 --load-average=4"
+
+# When using UEFI systems
+# GRUB_PLATFORMS="efi-64"
+
+GENTOO_MIRRORS="https://gentoo.c3sl.ufpr.br/ https://mirror.ufro.cl/gentoo/ http://gentoo.c3sl.ufpr.br/ http://mirror.ufro.cl/gentoo/ https://gentoo.osuosl.org/ https://mirrors.rit.edu/gentoo/"
