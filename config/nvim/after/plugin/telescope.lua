@@ -23,3 +23,5 @@ telescope.setup {
   },
 }
 
+local noice_ext = require("telescope").load_extension("noice")
+vim.keymap.set('n', '<leader>pn', noice_ext.noice, {})
