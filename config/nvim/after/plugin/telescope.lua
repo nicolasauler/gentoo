@@ -25,3 +25,7 @@ telescope.setup {
 
 local noice_ext = require("telescope").load_extension("noice")
 vim.keymap.set('n', '<leader>pn', noice_ext.noice, {})
+
+
+local dap_ext = telescope.load_extension('dap')
+vim.keymap.set('n', '<leader>pd', dap_ext.commands, {})

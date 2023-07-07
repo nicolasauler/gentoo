@@ -78,14 +78,17 @@ return {
             {'rafamadriz/friendly-snippets'},
         }
     },
+    "mfussenegger/nvim-dap",
+    "jay-babu/mason-nvim-dap.nvim",
+    "rcarriga/nvim-dap-ui",
+    "theHamsta/nvim-dap-virtual-text",
+    "nvim-telescope/telescope-dap.nvim",
+    --  Adaparter configuration for specific languages
+    "leoluz/nvim-dap-go",
+    "mfussenegger/nvim-dap-python",
 
     "github/copilot.vim",
     "lervag/vimtex",
 
-    {
-        "iamcco/markdown-preview.nvim",
-        build = "cd app && npm install",
-        init = function() vim.g.mkdp_filetypes = { "markdown" } end,
-        ft = { "markdown" },
-    },
+    {"ellisonleao/glow.nvim", config = true, cmd = "Glow"}
 }
