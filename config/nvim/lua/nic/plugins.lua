@@ -78,14 +78,15 @@ return {
             {'rafamadriz/friendly-snippets'},
         }
     },
-    "mfussenegger/nvim-dap",
-    "jay-babu/mason-nvim-dap.nvim",
-    "rcarriga/nvim-dap-ui",
-    "theHamsta/nvim-dap-virtual-text",
-    "nvim-telescope/telescope-dap.nvim",
-    --  Adaparter configuration for specific languages
-    "leoluz/nvim-dap-go",
-    "mfussenegger/nvim-dap-python",
+    {
+        "mfussenegger/nvim-dap",
+        "jay-babu/mason-nvim-dap.nvim",
+        "theHamsta/nvim-dap-virtual-text",
+        "nvim-telescope/telescope-dap.nvim",
+        "rcarriga/nvim-dap-ui",
+        "leoluz/nvim-dap-go",
+        "mfussenegger/nvim-dap-python",
+    },
 
     "github/copilot.vim",
     "lervag/vimtex",
