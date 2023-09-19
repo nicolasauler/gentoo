@@ -1,7 +1,7 @@
 return {
     {
         "ellisonleao/gruvbox.nvim",
-        lazy = false, -- make sure we load this during startup if it is your main colorscheme
+        lazy = false,    -- make sure we load this during startup if it is your main colorscheme
         priority = 1000, -- make sure to load this before all the other start plugins
         config = function()
             -- load the colorscheme here
@@ -10,7 +10,8 @@ return {
     },
 
     {
-        'nvim-telescope/telescope.nvim', tag = '0.1.1',
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.1',
         -- or                              , branch = '0.1.1',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
@@ -48,34 +49,36 @@ return {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate"
     },
-    {'nvim-treesitter/playground'},
-    {'nvim-treesitter/nvim-treesitter-context'},
+    { 'nvim-treesitter/playground' },
+    { 'nvim-treesitter/nvim-treesitter-context' },
 
     "theprimeagen/harpoon",
     "mbbill/undotree",
     "tpope/vim-fugitive",
+    "lewis6991/gitsigns.nvim",
+    "ThePrimeagen/git-worktree.nvim",
 
     {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',
         dependencies = {
-            {'neovim/nvim-lspconfig'},
+            { 'neovim/nvim-lspconfig' },
             {
                 'williamboman/mason.nvim',
                 build = function()
                     pcall(vim.cmd, 'MasonUpdate')
                 end,
             },
-            {'williamboman/mason-lspconfig.nvim'},
+            { 'williamboman/mason-lspconfig.nvim' },
 
-            {'hrsh7th/nvim-cmp'},
-            {'hrsh7th/cmp-nvim-lsp'},
-            {'L3MON4D3/LuaSnip'},
-            {'hrsh7th/cmp-buffer'},
-            {'hrsh7th/cmp-path'},
-            {'saadparwaiz1/cmp_luasnip'},
-            {'hrsh7th/cmp-nvim-lua'},
-            {'rafamadriz/friendly-snippets'},
+            { 'hrsh7th/nvim-cmp' },
+            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'L3MON4D3/LuaSnip' },
+            { 'hrsh7th/cmp-buffer' },
+            { 'hrsh7th/cmp-path' },
+            { 'saadparwaiz1/cmp_luasnip' },
+            { 'hrsh7th/cmp-nvim-lua' },
+            { 'rafamadriz/friendly-snippets' },
         }
     },
     {
@@ -91,5 +94,9 @@ return {
     "github/copilot.vim",
     "lervag/vimtex",
 
-    {"ellisonleao/glow.nvim", config = true, cmd = "Glow"}
+    { "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
+
+    "tpope/vim-dadbod",
+    "kristijanhusak/vim-dadbod-ui",
+    "kristijanhusak/vim-dadbod-completion"
 }

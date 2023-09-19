@@ -1,0 +1,17 @@
+[user]
+	email = nicolasauler@usp.br
+	name = Nicolas Auler
+
+[commit]
+	template = /home/nic/.config/git/commit_template
+
+[merge]
+    tool = nvimdiff4
+    prompt = false
+[mergetool "nvimdiff4"]
+    cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
+[core]
+    editor = nvim
+[init]
+	defaultBranch = main
