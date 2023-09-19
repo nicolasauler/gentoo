@@ -26,30 +26,30 @@ alias nn='nvim'
 alias flameshot='flameshot gui'
 
 # alias ls='ls --color=auto'
-#alias ll='exa -l --header --icons'
+#alias ll='eza -l --header --icons'
 
 # rust btw
-alias ls='exa'
+alias ls='eza'
 alias cat='bat'
 alias ps='procs'
 
-exa() {
+eza() {
     if [[ "$#" -gt 0 ]]; then
-        command exa --icons "$@"
+        command eza --icons "$@"
     else
-        command exa "$@"
+        command eza "$@"
     fi
 }
 
-#exa() {
+#eza() {
 #    if [[ "$1" == "-l" ]]; then
-#        command exa --icons "$@"
+#        command eza --icons "$@"
 #    elif [[ "$1" == "-a" ]]; then
-#        command exa --icons "$@"
+#        command eza --icons "$@"
 #    elif [[ "$1" == "-la" ]]; then
-#        command exa --icons "$@"
+#        command eza --icons "$@"
 #    else
-#        command exa "$@"
+#        command eza "$@"
 #    fi 
 #}
 
@@ -63,3 +63,13 @@ exa() {
 eval "$(starship init bash)"
 
 eval "$(zellij setup --generate-auto-start bash)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/nic/google-cloud-sdk/path.bash.inc' ]; then . '/home/nic/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/nic/google-cloud-sdk/completion.bash.inc' ]; then . '/home/nic/google-cloud-sdk/completion.bash.inc'; fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
