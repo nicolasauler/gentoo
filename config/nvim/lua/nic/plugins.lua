@@ -16,6 +16,7 @@ return {
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
 
+    "nvim-lua/plenary.nvim",
     "gbprod/yanky.nvim",
 
     {
@@ -98,5 +99,7 @@ return {
 
     "tpope/vim-dadbod",
     "kristijanhusak/vim-dadbod-ui",
-    "kristijanhusak/vim-dadbod-completion"
+    "kristijanhusak/vim-dadbod-completion",
+
+    "rest-nvim/rest.nvim"
 }

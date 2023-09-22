@@ -12,14 +12,29 @@
 --local cmp_select = {behavior = cmp.SelectBehavior.Select}
 
 
-local lsp = require('lsp-zero').preset({})
+local lsp_zero = require('lsp-zero')
 
-lsp.on_attach(function(client, bufnr)
-    lsp.default_keymaps({ buffer = bufnr })
+lsp_zero.on_attach(function(client, bufnr)
+    lsp_zero.default_keymaps({ buffer = bufnr })
 end)
 
+require('mason').setup({})
+require('mason-lspconfig').setup({
+    ensure_installed = {
+        'arduino_language_server',
+        'bashls',
+        'clangd',
+        'lua_ls',
+        'pyright',
+        'rust_analyzer',
+    },
+    handlers = {
+        lsp_zero.default_setup,
+    },
+})
+
 -- (Optional) Configure lua language server for neovim
-require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+require('lspconfig').lua_ls.setup(lsp_zero.nvim_lua_ls())
 
 -- config arduino language server
 local MY_FQBN = "esp32:esp32:esp32doit-devkit-v1"
@@ -33,7 +48,7 @@ require('lspconfig').arduino_language_server.setup {
     }
 }
 
-lsp.setup()
+lsp_zero.setup()
 
 -- You need to setup `cmp` after lsp-zero
 local cmp = require('cmp')
@@ -68,7 +83,7 @@ cmp.setup({
     }
 })
 
-lsp.on_attach(function(client, bufnr)
+lsp_zero.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
