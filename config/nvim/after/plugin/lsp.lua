@@ -12,13 +12,13 @@
 --local cmp_select = {behavior = cmp.SelectBehavior.Select}
 
 
-local lsp_zero = require('lsp-zero')
+local lsp_zero = require('lsp-zero').preset({})
 
 lsp_zero.on_attach(function(client, bufnr)
     lsp_zero.default_keymaps({ buffer = bufnr })
 end)
 
-require('mason').setup({})
+-- require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {
         'arduino_language_server',
