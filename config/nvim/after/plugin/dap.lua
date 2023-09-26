@@ -76,10 +76,32 @@ require('dap-go').setup {
 }
 
 require('dap-python').setup('/home/nic/.virtualenvs/debugpy/bin/python')
+require('dap-python').test_runner = 'pytest'
+
+local ok, python_dap = pcall(require, 'dap-python')
+if not ok then
+    vim.notify('python-dap not installed', vim.log.levels.ERROR)
+    return
+end
+
+vim.keymap.set('n', '<leader>dn', function() python_dap.test_method() end, { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>df', function() python_dap.test_class() end, { noremap = true, silent = true })
+vim.keymap.set('v', '<leader>ds', function() python_dap.debug_selection() end, { noremap = true, silent = true })
+
 -- require('dap-python').setup('/home/nic/.local/share/nvim/mason/packages/debugpy/venv/bin/python')
 
--- configuring for debugging a fastapi app with uvicorn
+-- configure default debugging of a python script
+-- and
+-- configure for debugging a fastapi app with uvicorn
 dap.configurations.python = {
+    {
+        type = 'python',
+        request = 'launch',
+        name = "Python file",
+        program = "${file}",
+        cwd = '${workspaceFolder}',
+        python = '/home/nic/.virtualenvs/debugpy/bin/python',
+    },
     {
         type = 'python',
         request = 'launch',
@@ -91,3 +113,4 @@ dap.configurations.python = {
 --        python = '/home/nic/.local/share/nvim/mason/packages/debugpy/venv/bin/python',
     },
 }
+
