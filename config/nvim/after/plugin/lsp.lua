@@ -83,6 +83,16 @@ cmp.setup({
     }
 })
 
+cmp.setup.filetype({ 'sql', 'mysql' }, {
+    sources = {
+        { name = 'path' },
+        { name = 'nvim_lsp' },
+        { name = 'buffer',  keyword_length = 3 },
+        { name = 'luasnip', keyword_length = 2 },
+        { name = 'vim-dadbod-completion' },
+    },
+})
+
 lsp_zero.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
 

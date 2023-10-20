@@ -42,6 +42,6 @@ if not ok then
     return
 end
 
-vim.keymap.set('n', '<leader>hx', function() rest.run() end, {})
-vim.keymap.set('n', '<leader>hp', function() rest.run(true) end, {})
-vim.keymap.set('n', '<leader>hl', function() rest.last() end, {})
+vim.keymap.set('n', '<leader>rx', function() rest.run() end, {})
+vim.keymap.set('n', '<leader>rp', function() rest.run(true) end, {})
+vim.keymap.set('n', '<leader>rl', function() rest.last() end, {})
