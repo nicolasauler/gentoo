@@ -11,8 +11,7 @@ return {
 
     {
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.1',
-        -- or                              , branch = '0.1.1',
+        tag = '0.1.5',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
 
@@ -62,28 +61,23 @@ return {
     "ThePrimeagen/git-worktree.nvim",
 
     {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v2.x',
-        dependencies = {
-            { 'neovim/nvim-lspconfig' },
-            {
-                'williamboman/mason.nvim',
-                build = function()
-                    pcall(vim.cmd, 'MasonUpdate')
-                end,
-            },
-            { 'williamboman/mason-lspconfig.nvim' },
-
-            { 'hrsh7th/nvim-cmp' },
-            { 'hrsh7th/cmp-nvim-lsp' },
-            { 'L3MON4D3/LuaSnip' },
-            { 'hrsh7th/cmp-buffer' },
-            { 'hrsh7th/cmp-path' },
-            { 'saadparwaiz1/cmp_luasnip' },
-            { 'hrsh7th/cmp-nvim-lua' },
-            { 'rafamadriz/friendly-snippets' },
-        }
+        'williamboman/mason.nvim',
+        build = function()
+            pcall(vim.cmd, 'MasonUpdate')
+        end,
     },
+    'williamboman/mason-lspconfig.nvim',
+    { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
+    'neovim/nvim-lspconfig',
+    'hrsh7th/nvim-cmp',
+    'hrsh7th/cmp-nvim-lsp',
+    'L3MON4D3/LuaSnip',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'saadparwaiz1/cmp_luasnip',
+    'hrsh7th/cmp-nvim-lua',
+    'rafamadriz/friendly-snippets',
+
     {
         "mfussenegger/nvim-dap",
         "jay-babu/mason-nvim-dap.nvim",
@@ -97,7 +91,7 @@ return {
     "github/copilot.vim",
     "lervag/vimtex",
 
-    { "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
+    { "ellisonleao/glow.nvim",     config = true,  cmd = "Glow" },
 
     "tpope/vim-dadbod",
     "kristijanhusak/vim-dadbod-ui",
