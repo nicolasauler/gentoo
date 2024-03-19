@@ -1,16 +1,7 @@
----- Fix Undefined global 'vim'
---lsp.configure('lua_ls', {
---	settings = {
---		Lua = {
---			diagnostics = {
---				globals = { 'vim' }
---			}
---		}
---	}
---})
---
---local cmp_select = {behavior = cmp.SelectBehavior.Select}
-
+require("neodev").setup({
+  library = { plugins = { "nvim-dap-ui" }, types = true },
+  ...
+})
 
 local lsp_zero = require('lsp-zero').preset({})
 
@@ -27,6 +18,7 @@ require('mason-lspconfig').setup({
         'lua_ls',
         'pyright',
         'rust_analyzer',
+        'yamlls',
     },
     handlers = {
         lsp_zero.default_setup,
@@ -47,6 +39,19 @@ require('lspconfig').arduino_language_server.setup {
         MY_FQBN,
     }
 }
+
+require('lspconfig').nil_ls.setup {
+    settings = {
+        ['nil'] = {
+            testSetting = 42,
+            formatting = {
+                command = { "nixpkgs-fmt" },
+            },
+        },
+    },
+}
+
+require('lspconfig').yamlls.setup {}
 
 lsp_zero.setup()
 
@@ -87,8 +92,8 @@ cmp.setup.filetype({ 'sql', 'mysql' }, {
     sources = {
         { name = 'path' },
         { name = 'nvim_lsp' },
-        { name = 'buffer',  keyword_length = 3 },
-        { name = 'luasnip', keyword_length = 2 },
+        { name = 'buffer',               keyword_length = 3 },
+        { name = 'luasnip',              keyword_length = 2 },
         { name = 'vim-dadbod-completion' },
     },
 })

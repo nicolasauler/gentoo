@@ -13,4 +13,3 @@ vim.keymap.set("n", "<leader>tl", "<cmd>TroubleToggle loclist<cr>",
 vim.keymap.set("n", "<leader>tq", "<cmd>TroubleToggle quickfix<cr>",
   {silent = true, noremap = true}
 )
-

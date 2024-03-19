@@ -5,8 +5,8 @@ require("mason-nvim-dap").setup({
         "codelldb",
         "debugpy",
         "delve",
-        'shellcheck',
-        'shfmt'
+        "shellcheck",
+        "shfmt",
     }
 })
 
@@ -115,4 +115,3 @@ dap.configurations.python = {
 --        python = '/home/nic/.local/share/nvim/mason/packages/debugpy/venv/bin/python',
     },
 }
-
